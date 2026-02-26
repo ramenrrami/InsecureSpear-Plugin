@@ -1,0 +1,15 @@
+name: insecurespear
+version: '1.0-SNAPSHOT'
+main: me.raami.insecurespear.Insecurespear
+api-version: '1.21.11'
+authors: [ raammi ]
+commands:
+  ramigodspear:
+    description: Main command for the God Spear
+    usage: /ramigodspear <give|check|removeall|reload>
+    permission: insecurespear.admin
+    permission-message: §cYou do not have permission for this.
+permissions:
+  insecurespear.admin:
+    description: Allows usage of God Spear commands
+    default: op

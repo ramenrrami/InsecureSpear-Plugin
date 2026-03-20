@@ -1,0 +1,18 @@
+proxy: false
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "minecraft"
+  username: "root"
+  password: ""
+
+messages:
+  prefix: "&8[&bGodSpear&8] "
+  player-not-found: "&cPlayer not found."
+  give-success: "&aGave God Spear to &e%player%&a."
+  remove-start: "&7Starting removal process... (This may lag briefly for many chunks)"
+  remove-success: "&cSuccessfully removed &e%amount% &cGod Spears from the world."
+  reload: "&aConfiguration reloaded."
+  no-permission: "&cYou do not have permission for this."
+  check-header: "&8(&e%amount% &7Available&8)"
+  check-format: "&7- &f%player% &7(x%amount%)"

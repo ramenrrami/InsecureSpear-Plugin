@@ -1,0 +1,14 @@
+name: InsecureSpears
+version: '1.0-SNAPSHOT'
+main: me.raami.insecureSpears.InsecureSpears
+api-version: '1.21'
+authors: [ ue_rami ]
+description: This Plugin was made by ue_rami on discord
+commands:
+  insecurespear:
+    description: Main command for the God Spear
+    usage: /insecurespear <give|check|removeall|reload|credits>
+permissions:
+  insecurespear.adminuse:
+    description: Allows usage of God Spear commands
+    default: op

@@ -88,7 +88,7 @@ public final class InsecureSpears extends JavaPlugin {
     public ItemStack createGodSpear(String ownerName, String ownerUuid) {
         Material spearMat;
         try {
-            spearMat = Material.valueOf("TRIDENT");
+            spearMat = Material.valueOf("NETHERITE_SPEAR");
         } catch (IllegalArgumentException e) {
             spearMat = Material.NETHERITE_SWORD;
         }

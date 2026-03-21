@@ -52,14 +52,12 @@ public class SpearListener implements Listener {
                 boolean hasSpear = plugin.isGodSpearValid(main) || plugin.isGodSpearValid(off);
 
                 if (hasSpear) {
-                    p.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 40, 2, false, false));
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 40, 0, false, false));
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 40, 9, false, false));
                     p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 40, 2, false, false));
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 40, 1, false, false));
                     p.setFoodLevel(20);
                     p.setSaturation(20f);
-                }
-
-                if (plugin.isGodSpearValid(off) && main != null && main.getType().toString().contains("PICKAXE")) {
-                    p.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 40, 29, false, false));
                 }
             }
         }, 0L, 10L);

@@ -9,6 +9,7 @@ This plugin is a custom made one for the insecure smp, it supports proxy by turn
 ## Using
 Permissions:
 - ```insecurespears.adminuse```: for all admin commands.
+  
 Commands:
 - ```/insecurespears give {player}``` gives the player the an op-spear
 - ```/insecurespears check``` gives you a list with all owners of an op-spear (includes ender chest and normal ones)

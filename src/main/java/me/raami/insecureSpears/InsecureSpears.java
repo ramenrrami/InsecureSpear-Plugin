@@ -93,13 +93,13 @@ public final class InsecureSpears extends JavaPlugin {
         if (meta != null) {
             meta.setDisplayName("§bɪɴꜱᴇᴄᴜʀᴇ ꜱᴘᴇᴀʀ");
             meta.setLore(java.util.Arrays.asList(
-                    "§7Effects",
-                    "§6Strength III",
-                    "§6Speed III",
-                    "§6Saturation",
-                    "§6Haste XXX",
+                    " §7Effects",
+                    "  §6Strength III",
+                    "  §6Speed III",
+                    "  §6Saturation",
+                    "  §6Haste XXX",
                     "",
-                    "§cℹ ᴍᴀᴅᴇ ʙʏ ᴜᴇ_ʀᴀᴍɪ"
+                    "§8ℹ ᴍᴀᴅᴇ ʙʏ ᴜᴇ_ʀᴀᴍɪ"
             ));
             meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, "godspear");
             
@@ -116,14 +116,6 @@ public final class InsecureSpears extends JavaPlugin {
 
             addCustomEnchant(meta, "wind_burst", 3);
             addCustomEnchant(meta, "lunge", 4);
-
-            meta.addAttributeModifier(org.bukkit.attribute.Attribute.ATTACK_SPEED,
-                    new org.bukkit.attribute.AttributeModifier(
-                            new NamespacedKey(InsecureSpears.instance, "godspear_speed"),
-                            1.309,
-                            org.bukkit.attribute.AttributeModifier.Operation.ADD_NUMBER,
-                            org.bukkit.inventory.EquipmentSlotGroup.MAINHAND
-                    ));
 
             spear.setItemMeta(meta);
             

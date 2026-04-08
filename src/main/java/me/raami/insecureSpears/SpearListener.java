@@ -37,13 +37,17 @@ public class SpearListener implements Listener {
         startPassiveEffectsTask();
     }
 
+    private static final org.bukkit.NamespacedKey SPEED_KEY = new org.bukkit.NamespacedKey("insecurespears", "godspear_speed");
+
     private void startPassiveEffectsTask() {
         Bukkit.getScheduler().runTaskTimer(plugin, () -> {
+            double bonus = plugin.getConfig().getBoolean("crazy-events", false) ? 0.582 : 0.094;
             for (Player p : Bukkit.getOnlinePlayers()) {
                 ItemStack main = p.getInventory().getItemInMainHand();
                 ItemStack off = p.getInventory().getItemInOffHand();
 
                 boolean hasSpear = plugin.isGodSpearValid(main) || plugin.isGodSpearValid(off);
+                org.bukkit.attribute.AttributeInstance attr = p.getAttribute(org.bukkit.attribute.Attribute.ATTACK_SPEED);
 
                 if (hasSpear) {
                     p.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 40, 0, false, false));
@@ -52,6 +56,22 @@ public class SpearListener implements Listener {
                     p.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 40, 1, false, false));
                     p.setFoodLevel(20);
                     p.setSaturation(20f);
+                    if (attr != null) {
+                        org.bukkit.attribute.AttributeModifier old = null;
+                        for (org.bukkit.attribute.AttributeModifier mod : attr.getModifiers()) {
+                            if (mod.getKey().equals(SPEED_KEY)) { old = mod; break; }
+                        }
+                        if (old != null && old.getAmount() != bonus) { attr.removeModifier(old); old = null; }
+                        if (old == null) {
+                            attr.addModifier(new org.bukkit.attribute.AttributeModifier(SPEED_KEY, bonus, org.bukkit.attribute.AttributeModifier.Operation.ADD_NUMBER, org.bukkit.inventory.EquipmentSlotGroup.MAINHAND));
+                        }
+                    }
+                } else {
+                    if (attr != null) {
+                        for (org.bukkit.attribute.AttributeModifier mod : attr.getModifiers()) {
+                            if (mod.getKey().equals(SPEED_KEY)) { attr.removeModifier(mod); break; }
+                        }
+                    }
                 }
             }
         }, 0L, 10L);

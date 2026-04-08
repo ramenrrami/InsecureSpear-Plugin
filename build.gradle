@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'me.raami'
-version = '2.0.0'
+version = '2.1.0'
 
 repositories {
     mavenCentral()
@@ -56,13 +56,13 @@ processResources {
 }
 
 jar {
-    archiveFileName.set('InsecureSpears.2.0.0.jar')
+    archiveFileName.set('InsecureSpears.2.1.0.jar')
 }
 
 shadowJar {
     relocate 'com.mysql', 'me.raami.insecureSpears.libs.mysql'
     relocate 'com.zaxxer.hikari', 'me.raami.insecureSpears.libs.hikari'
     archiveClassifier.set('')
-    archiveFileName.set('InsecureSpears.2.0.0.jar')
+    archiveFileName.set('InsecureSpears.2.1.0.jar')
 }
 

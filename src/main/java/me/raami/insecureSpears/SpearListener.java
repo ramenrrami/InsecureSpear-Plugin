@@ -63,7 +63,7 @@ public class SpearListener implements Listener {
                         }
                         if (old != null && old.getAmount() != bonus) { attr.removeModifier(old); old = null; }
                         if (old == null) {
-                            attr.addModifier(new org.bukkit.attribute.AttributeModifier(SPEED_KEY, bonus, org.bukkit.attribute.AttributeModifier.Operation.ADD_NUMBER, org.bukkit.inventory.EquipmentSlotGroup.MAINHAND));
+                            attr.addModifier(new org.bukkit.attribute.AttributeModifier(SPEED_KEY, bonus, org.bukkit.attribute.AttributeModifier.Operation.ADD_NUMBER, org.bukkit.inventory.EquipmentSlotGroup.ANY));
                         }
                     }
                 } else {

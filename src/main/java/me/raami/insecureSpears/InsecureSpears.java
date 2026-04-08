@@ -93,11 +93,11 @@ public final class InsecureSpears extends JavaPlugin {
         if (meta != null) {
             meta.setDisplayName("§bɪɴꜱᴇᴄᴜʀᴇ ꜱᴘᴇᴀʀ");
             meta.setLore(java.util.Arrays.asList(
-                    " §7Effects",
-                    "  §6Strength III",
-                    "  §6Speed III",
-                    "  §6Saturation",
-                    "  §6Haste XXX",
+                    "§7Effects",
+                    "   §6Strength III",
+                    "   §6Speed III",
+                    "   §6Saturation",
+                    "   §6Haste XXX",
                     "",
                     "§8ℹ ᴍᴀᴅᴇ ʙʏ ᴜᴇ_ʀᴀᴍɪ"
             ));
